@@ -1,14 +1,3 @@
 node_modules/**/*
-.expo/*
-npm-debug.*
-*.jks
-*.p12
-*.key
-*.mobileprovision
-out/
 .shadow-cljs/
-.nrepl-port
-pom.xml
-.idea/
-*.iml
-/app/
+/react-native/app/
