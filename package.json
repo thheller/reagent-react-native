@@ -2,10 +2,7 @@
   "name": "AwesomeProject",
   "version": "0.0.1",
   "private": true,
-  "dependencies": {
-    "react": "16.9.0",
-    "react-dom": "16.9.0"
-  },
+  "dependencies": {},
   "devDependencies": {
     "shadow-cljs": "^2.8.83"
   }
