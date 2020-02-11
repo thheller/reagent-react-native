@@ -12,7 +12,11 @@ $ react-native run-android
 ;; production build
 $ shadow-cljs release app
 
-;; no clue what to do for react-native
+;; Create Android release
+$ cd react-native/android
+$ ./gradlew assembleRelease
+;; APK should appear at android/app/build/outputs/apk/release
+;; installs in Android as "Hello App Display Name"
 ```
 
 ## Notes
