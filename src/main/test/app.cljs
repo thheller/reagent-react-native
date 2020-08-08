@@ -1,8 +1,8 @@
 (ns test.app
   (:require
+    [shadow.react-native :refer (render-root)]
     ["react-native" :as rn]
     ["react" :as react]
-    ["create-react-class" :as crc]
     [reagent.core :as r]
     ))
 
@@ -30,38 +30,10 @@
    [:> rn/Text {:style (.-title styles)} "Hello!"]
    [:> rn/Image {:source splash-img :style {:width 200 :height 200}}]])
 
-(defonce root-ref (atom nil))
-(defonce root-component-ref (atom nil))
-
-(defn render-root [root]
-  (let [first-call? (nil? @root-ref)]
-    (reset! root-ref root)
-
-    (if-not first-call?
-      (when-let [root @root-component-ref]
-        (.forceUpdate ^js root))
-      (let [Root
-            (crc
-              #js {:componentDidMount
-                   (fn []
-                     (this-as this
-                       (reset! root-component-ref this)))
-                   :componentWillUnmount
-                   (fn []
-                     (reset! root-component-ref nil))
-                   :render
-                   (fn []
-                     (let [body @root-ref]
-                       (if (fn? body)
-                         (body)
-                         body)))})]
-
-        (rn/AppRegistry.registerComponent "AwesomeProject" (fn [] Root))))))
-
 (defn start
   {:dev/after-load true}
   []
-  (render-root (r/as-element [root])))
+  (render-root "AwesomeProject" (r/as-element [root])))
 
 (defn init []
   (start))

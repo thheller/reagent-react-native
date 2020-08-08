@@ -1,3 +1,6 @@
 node_modules/**/*
 .shadow-cljs/
 /react-native/app/
+.idea/
+/pom.xml
+/*.iml

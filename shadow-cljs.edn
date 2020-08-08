@@ -12,5 +12,4 @@
   {:target :react-native
    :init-fn test.app/init
    :output-dir "react-native/app"
-   :compiler-options {:infer-externs :auto}
    :js-options {:js-package-dirs ["react-native/node_modules"]}}}}
