@@ -1,10 +1,3 @@
-# WARNING: No longer installs properly!
-
-Running `npm install` in the `react-native` folder as the instructions below tell you will fail. It seems to work if you run `npm install --legacy-peer-deps` but at this point the generated `react-native` folder is 2 years old. I suspect that a lot has changed in the react-native world since then. The CLJS parts remain the same though. I'd advise recreating the `react-native` folder. Basically all you should need is `react-native init NewVersion` and then editing `NewVersion/index.js` in the same way the current `react-native/index.js` was. I have not tested that since I don't do any react-native development myself.
-
-A PR would be welcome if someone wants to take on that update.
-
-
 ```
 $ npm install && cd react-native && npm install
 $ shadow-cljs watch app
