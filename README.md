@@ -1,5 +1,5 @@
 ```
-$ npm install && cd react-native && npm install
+$ npm install && cd react-native && yarn install
 $ shadow-cljs watch app
 
 ;; wait for first compile to finish or metro gets confused
@@ -7,7 +7,7 @@ $ cd react-native
 
 $ npm start
 ;; and
-$ react-native run-android
+$ npm run android
 
 ;; production build
 $ shadow-cljs release app
@@ -16,7 +16,8 @@ $ shadow-cljs release app
 $ cd react-native/android
 $ ./gradlew assembleRelease
 ;; APK should appear at android/app/build/outputs/apk/release
-;; installs in Android as "Hello App Display Name"
+;; installs in Android as "AwesomeProject"
+$ adb install -r react-native/android/app/build/outputs/apk/release/app-release.apk
 ```
 
 ## Notes
