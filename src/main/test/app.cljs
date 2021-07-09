@@ -2,9 +2,7 @@
   (:require
     [shadow.react-native :refer (render-root)]
     ["react-native" :as rn]
-    ["react" :as react]
-    [reagent.core :as r]
-    ))
+    [reagent.core :as r]))
 
 ;; must use defonce and must refresh full app so metro can fill these in
 ;; at live-reload time `require` does not exist and will cause errors
@@ -37,4 +35,3 @@
 
 (defn init []
   (start))
-
